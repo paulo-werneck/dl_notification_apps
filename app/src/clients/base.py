@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class ClientMessageBase(ABC):
+class BaseClient(ABC):
 
     def __init__(self, payload_sns):
         self.payload_sns = payload_sns
