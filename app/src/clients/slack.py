@@ -1,13 +1,14 @@
 from app.src.clients.base import BaseClient
-import requests
 import json
+import os
+import requests
 
 
 class SlackClient(BaseClient):
 
     def __init__(self, payload_sns, **kwargs):
         super().__init__(payload_sns)
-        self.url = kwargs.get("url")
+        self.url = os.getenv("ENDPOINT_URL")
 
     def push_client_notification(self):
         headers = {"Content-type": "application/json"}
